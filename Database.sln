@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30711.63
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database", "Bazzigg.Database\Bazzigg.Database.csproj", "{64AAE1EF-D1A3-40E5-A903-638D9C930EB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database.Test", "Bazzigg.Database.Test\Bazzigg.Database.Test.csproj", "{AE41D700-B4F6-4458-9118-9B9B7927A4B0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64AAE1EF-D1A3-40E5-A903-638D9C930EB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64AAE1EF-D1A3-40E5-A903-638D9C930EB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64AAE1EF-D1A3-40E5-A903-638D9C930EB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64AAE1EF-D1A3-40E5-A903-638D9C930EB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE41D700-B4F6-4458-9118-9B9B7927A4B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE41D700-B4F6-4458-9118-9B9B7927A4B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE41D700-B4F6-4458-9118-9B9B7927A4B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE41D700-B4F6-4458-9118-9B9B7927A4B0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {752AE324-1CCF-4AB4-A6D0-81C4A7CF7AC6}
+	EndGlobalSection
+EndGlobal
