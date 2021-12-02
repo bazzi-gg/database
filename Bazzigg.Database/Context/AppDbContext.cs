@@ -18,6 +18,7 @@ namespace Bazzigg.Database.Context
         public DbSet<PlayerDetail> PlayerDetail { get; set; }
         public DbSet<PlayerSummary> PlayerSummary { get; set; }
         public DbSet<TrackRecord> TrackRecord { get; set; }
+        public DbSet<Influencer> Influencer { get; set; }
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
 
@@ -175,6 +176,19 @@ namespace Bazzigg.Database.Context
                 c => c.Aggregate(0, (a, v) => HashCode.Combine(a, v.GetHashCode())),
                 c => c.ToList());
                 eb.Property(p => p.Records).Metadata.SetValueComparer(valueComparer);
+            });
+
+            modelBuilder.Entity<Influencer>(eb =>
+            {
+                eb.Property(p => p.AccessId).IsRequired();
+                eb.Property(p => p.Nickname).IsRequired();
+                eb.Property(p => p.Description).IsRequired();
+                eb.Property(p => p.Keywords)
+                    .HasConversion(
+                        v => JsonSerializer.Serialize(v,null),
+                        v => JsonSerializer.Deserialize<List<string>>(v,null));
+                eb.Property<Guid>("Id")
+                .ValueGeneratedOnAdd();
             });
         }
     }
