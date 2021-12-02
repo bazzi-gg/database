@@ -15,7 +15,7 @@ namespace Bazzigg.Database.Test
     public class PlayerDetailTests
     {
         [TestMethod(displayName: "추가")]
-        public async Task Add()
+        public void Add()
         {
             using var context = new AppDbContext(TestOptions.AppDbContextOptions);
             var matches = new List<MatchPreview>
