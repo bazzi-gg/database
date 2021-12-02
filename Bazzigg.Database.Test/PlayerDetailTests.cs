@@ -18,38 +18,32 @@ namespace Bazzigg.Database.Test
         public async Task Add()
         {
             using var context = new AppDbContext(TestOptions.AppDbContextOptions);
-            var match = await TestOptions.KartriderApi.Match.GetMatchDetailAsync("03bd00105ddcdf7a");
-            foreach (var player in match.Players)
+            var matches = new List<MatchPreview>
             {
-                var playerInfo = await TestOptions.KartriderApi.Match.GetMatchesByAccessIdAsync(player.AccessId);
-                var matches = new List<MatchPreview>();
-                foreach (var playerMatch in playerInfo.Matches["effd66758144a29868663aa50e85d3d95c5bc0147d7fdb9802691c2087f3416e"])
+                new MatchPreview()
                 {
-                    matches.Add(new MatchPreview()
-                    {
-                        Character = "아라비아 왕자 우니",
-                        CharacterHash = playerMatch.Player.Character,
-                        EndDateTime = playerMatch.EndDateTime,
-                        Kartbody = "골든 스톰 블레이드 X",
-                        MatchId = playerMatch.MatchId,
-                        KartbodyHash = playerMatch.Player.Kartbody,
-                        Rank = playerMatch.Player.Rank,
-                        Track = playerMatch.TrackId,
-                        Win = playerMatch.Player.Win
-                    });
+                    Character = "아라비아 왕자 우니",
+                    CharacterHash = "1",
+                    EndDateTime = System.DateTime.MaxValue,
+                    Kartbody = "골든 스톰 블레이드 X",
+                    MatchId = "",
+                    KartbodyHash = "",
+                    Rank = 0,
+                    Track = "",
+                    Win = true
                 }
-                var playerDetail = new PlayerDetail()
-                {
-                    AccessId = player.AccessId,
-                    Channel = match.Channel,
-                    Character = player.Character,
-                    License = player.License,
-                    Nickname = player.Nickname,
-                    RacingMasterEmblem = false,
-                    Matches = matches,
-                };
-                context.PlayerDetail.Add(playerDetail);
-            }
+            };
+            var playerDetail = new PlayerDetail()
+            {
+                AccessId = "",
+                Channel = "",
+                Character = "",
+                License = Kartrider.Api.Endpoints.MatchEndpoint.Models.License.None,
+                Nickname = "",
+                RacingMasterEmblem = false,
+                Matches = matches,
+            };
+            context.PlayerDetail.Add(playerDetail);
             context.SaveChanges();
         }
     }
