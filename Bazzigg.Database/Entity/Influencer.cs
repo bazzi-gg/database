@@ -12,5 +12,6 @@ namespace Bazzigg.Database.Entity
         public List<string> Keywords { get; set; }
         public string YoutubeLink { get; set; }
         public string TwitchLink { get; set; }
+        public DateTime LastUpdated { get; set; }
     }
 }
