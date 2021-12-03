@@ -14,6 +14,7 @@
     <PackageIconUrl />
     <PackageTags>bazzigg</PackageTags>
     <PackageProjectUrl>https://github.com/bazzi-gg</PackageProjectUrl>
+    <PackageReleaseNotes>Influencer.Keywords 다국어 지원</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
