@@ -22,7 +22,7 @@ namespace Bazzigg.Database.Test
                 Description = "",
                 Keywords = new List<string>()
                 {
-                    "", ""
+                    "가", "나"
                 },
                 Nickname = ""
             };
