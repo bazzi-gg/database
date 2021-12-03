@@ -180,13 +180,17 @@ namespace Bazzigg.Database.Context
 
             modelBuilder.Entity<Influencer>(eb =>
             {
+                JsonSerializerOptions jso = new JsonSerializerOptions
+                {
+                    Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+                };
                 eb.Property(p => p.AccessId).IsRequired();
                 eb.Property(p => p.Nickname).IsRequired();
                 eb.Property(p => p.Description).IsRequired();
                 eb.Property(p => p.Keywords)
                     .HasConversion(
-                        v => JsonSerializer.Serialize(v,null),
-                        v => JsonSerializer.Deserialize<List<string>>(v,null));
+                        v => JsonSerializer.Serialize(v,jso),
+                        v => JsonSerializer.Deserialize<List<string>>(v,jso));
                 eb.Property<Guid>("Id")
                 .ValueGeneratedOnAdd();
             });
