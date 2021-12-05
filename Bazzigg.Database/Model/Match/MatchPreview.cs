@@ -14,6 +14,7 @@ namespace Bazzigg.Database.Model.Match
         public string Character { get; set; }
         public string CharacterHash { get; set; }
         public TimeSpan Record { get; set; }
+        public string Channel { get; set; }
 
     }
 }
