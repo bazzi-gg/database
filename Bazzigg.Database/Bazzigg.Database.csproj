@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RepositoryUrl>https://github.com/bazzi-gg/database</RepositoryUrl>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <Company>bazzi.gg</Company>
     <Product>Database</Product>
     <Authors>Plorence</Authors>
